@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_faqs",
+  "info": {
+    "name": "Website FAQ"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Question": {
+      "type": "string"
+    },
+    "Answer": {
+      "type": "richtext"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Transport",
+        "Corona",
+        "Uni_Erasmus",
+        "ESNcard",
+        "Housing",
+        "Other"
+      ],
+      "required": true
+    },
+    "Order_within_category": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}

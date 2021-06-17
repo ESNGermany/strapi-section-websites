@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/website-statutes",
+      "handler": "website-statutes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/website-statutes",
+      "handler": "website-statutes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/website-statutes",
+      "handler": "website-statutes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

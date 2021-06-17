@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_statutes",
+  "info": {
+    "name": "Website Statutes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

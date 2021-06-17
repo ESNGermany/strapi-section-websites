@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_contents",
+  "info": {
+    "name": "Website Content",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "Layout": {
+      "type": "enumeration",
+      "enum": [
+        "Text_left_img_right",
+        "Text_right_img_left",
+        "Text_above_img_below",
+        "Text_below_img_above"
+      ],
+      "default": "Text_below_img_above",
+      "required": true
+    },
+    "Wrap_in_shadow_box": {
+      "type": "boolean",
+      "default": false
+    },
+    "Page_for_display": {
+      "type": "enumeration",
+      "enum": [
+        "Landing_page",
+        "Team_page",
+        "Members_page",
+        "ESNcard_page",
+        "Incomings_page"
+      ],
+      "required": true
+    },
+    "Order_on_page": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "Youtube_video_embed_link": {
+      "type": "string"
+    }
+  }
+}

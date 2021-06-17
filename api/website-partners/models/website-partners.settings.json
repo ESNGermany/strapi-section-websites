@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_partners",
+  "info": {
+    "name": "Website Partners",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Main_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Deal": {
+      "type": "richtext"
+    },
+    "Link": {
+      "type": "string",
+      "required": true
+    },
+    "Order": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    }
+  }
+}

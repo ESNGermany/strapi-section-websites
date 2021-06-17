@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_imprints",
+  "info": {
+    "name": "Website Imprint"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "default": "Imprint"
+    },
+    "Text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
