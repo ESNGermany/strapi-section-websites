@@ -176,7 +176,7 @@ function new_section_website {
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":dun:" option; do
+while getopts ":d:u:n:" option; do
 	case $option in
 	d) # display Help
 		delete_strapi_section
@@ -193,9 +193,9 @@ while getopts ":dun:" option; do
 	esac
 done
 
-printf "Usage of the script ./create_section.sh -n/-u/-d:\n 
-	-n to create a new section website \n 
-	-d delete an existing website \n 
-	-u update from github"
+printf "Usage of the script ./create_section.sh -n/-u/-d:
+	-n to create a new section website 
+	-d delete an existing website 
+	-u update from github\n"
 
 exit 0
