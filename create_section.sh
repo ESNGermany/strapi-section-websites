@@ -19,28 +19,6 @@ source .envcreatescript
 #STRAPIDBPWD=
 SECTIONSFILE=${STRAPIDIR}/sections.txt
 
-##################################################################################################
-# This function copies the template in the api folder of strapi for a new section website
-function copy_strapi_template {
-	#First copy the template folders for a new section
-	find ${STRAPIDIR}/api/ -type d -name website-* |
-		while IFS= read -r secpath; do
-			NEWPATH=$(echo ${secpath} | sed -r "s/(.*)website-(.*)/\1${SMALLSECTION}-\2/g")
-			cp -R ${secpath} ${NEWPATH}
-			find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)website-(.*)/\1${SMALLSECTION}-\2/g"
-			find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)website_(.*)/\1${SMALLSECTION}_\2/g"
-			find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)Website\ (.*)/\1${SECTIONNAME}\ \2/g"
-		done
-
-	# Rename copied subfolders and all files too
-	export EXPSECT=${SMALLSECTION}
-	find ${STRAPIDIR}/api/${SMALLSECTION}-* -type f -print | rename 's/website-/$ENV{EXPSECT}-/g'
-
-	# We need a restart of Strapi to apply the new roles
-	cd ${STRAPIDIR}
-	ENV_PATH=${STRAPIDIR}/.env pm2 start yarn --name ${STRAPIPM2} --interpreter bash -- develop 2>&1 1>/dev/null
-	pm2 delete ${STRAPIPM2} 2>&1 1>/dev/null
-}
 
 ###################################################################################################
 # This function creates a new strapi user for the section.
@@ -134,17 +112,27 @@ END
 }
 
 ###################################################################################################
+function update_sections {
+	# Delete all section sites except the template
+	find ${STRAPIDIR}/api/ -maxdepth 1 -type d -not -name website-* -not -name api -exec rm -r "{}" \; 2>&1 1>/dev/null
+	git pull
+	while IFS= read -r line; do 
+		SECTIONNAME=$line
+		add_section_website;
+	done < ${SECTIONSFILE}
+	echo "Update complete"	
+}
 
+###################################################################################################
 function add_section_website {
 	# Create a lowercase version of the name and remove umlaute
 	SMALLSECTION=$(echo ${SECTIONNAME} | iconv -f utf8 -t ascii//TRANSLIT | tr -d " " | tr [:upper:] [:lower:])
-
 
 	echo "Stopping current Strapi installation"
 	pm2 stop ${STRAPIPM2} 
 
 	create_strapi_user_group
-	copy_strapi_template
+	update_sections
 
 	cd ${STRAPIDIR}
 	ENV_PATH=${STRAPIDIR}/.env pm2 start yarn --name ${STRAPIPM2} --interpreter bash -- develop
@@ -171,27 +159,16 @@ function new_section_website {
 		echo "Aborting creation"
 		exit 0
 	fi
+	echo ${SECTIONNAME} >> sections.txt
 	add_section_website
 
-}
-
-###################################################################################################
-function update_sections {
-	# Delete all section sites except the template
-	find ${STRAPIDIR}/api/ -maxdepth 1 -type d -not -name website-* -not -name api -exec rm -r "{}" \; 2>&1 1>/dev/null
-	git pull
-	while IFS= read -r line; do 
-		SECTIONNAME=$line
-		add_section_website;
-	done < ${SECTIONSFILE}
-	echo "Update complete"	
 }
 
 ############################################################
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":d:u" option; do
+while getopts ":dun:" option; do
 	case $option in
 	d) # display Help
 		delete_strapi_section
@@ -208,7 +185,9 @@ while getopts ":d:u" option; do
 	esac
 done
 
-printf "Usage of the script ./create_section.sh -n/-u/-d:\n -n to create a new section website \n -d delete an existing website \n -u update from github"
-
+printf "Usage of the script ./create_section.sh -n/-u/-d:\n 
+	-n to create a new section website \n 
+	-d delete an existing website \n 
+	-u update from github"
 
 exit 0
