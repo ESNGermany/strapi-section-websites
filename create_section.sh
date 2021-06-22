@@ -118,7 +118,15 @@ function update_sections {
 	git pull
 	while IFS= read -r line; do 
 		SECTIONNAME=$line
-		add_section_website;
+		#First copy the template folders for a new section
+		find ${STRAPIDIR}/api/ -type d -name website-* |
+			while IFS= read -r secpath; do
+				NEWPATH=$(echo ${secpath} | sed -r "s/(.*)website-(.*)/\1${SMALLSECTION}-\2/g")
+				cp -R ${secpath} ${NEWPATH}
+				find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)website-(.*)/\1${SMALLSECTION}-\2/g"
+				find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)website_(.*)/\1${SMALLSECTION}_\2/g"
+				find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)Website\ (.*)/\1${SECTIONNAME}\ \2/g"
+			done
 	done < ${SECTIONSFILE}
 	echo "Update complete"	
 }
