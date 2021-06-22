@@ -176,7 +176,7 @@ function new_section_website {
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":d:u:n:" option; do
+while getopts ":d:u:n" option; do
 	case $option in
 	d) # display Help
 		delete_strapi_section
