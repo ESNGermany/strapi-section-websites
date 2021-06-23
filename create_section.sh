@@ -127,12 +127,28 @@ function update_sections {
 				find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)website_(.*)/\1${SMALLSECTION}_\2/g"
 				find ${NEWPATH} -type f -print0 | xargs -0 sed -i -E "s/(.*)Website\ (.*)/\1${SECTIONNAME}\ \2/g"
 			done
+		# Rename copied subfolders and all files too
+		export EXPSECT=${SMALLSECTION}
+		find ${STRAPIDIR}/api/${SMALLSECTION}-* -type f -print | rename 's/website-/$ENV{EXPSECT}-/g'
 	done < ${SECTIONSFILE}
 	echo "Update complete"	
 }
 
 ###################################################################################################
-function add_section_website {
+function new_section_website {
+	echo "This script creates a new section website on the backend and frontend"
+	read -p 'Section Name (eg. ESN Freiburg): ' SECTIONNAME
+	read -p 'Section Domain (eg. freiburg.esn-germany.de): ' DOMAIN
+	read -p 'Mail Address: ' MAIL
+	echo -e "Creating a new website for section: ${SECTIONNAME} \nDomain Address:\t https://${DOMAIN} \nAdmin Mail:\t ${MAIL}"
+	read -p 'Are the information above correct? [y/N]' INFO
+
+	if [[ $INFO != "y" ]]; then
+		echo "Aborting creation"
+		exit 0
+	fi
+	echo ${SECTIONNAME} >> sections.txt
+
 	# Create a lowercase version of the name and remove umlaute
 	SMALLSECTION=$(echo ${SECTIONNAME} | iconv -f utf8 -t ascii//TRANSLIT | tr -d " " | tr [:upper:] [:lower:])
 
@@ -154,29 +170,11 @@ function add_section_website {
 
 }
 
-###################################################################################################
-function new_section_website {
-	echo "This script creates a new section website on the backend and frontend"
-	read -p 'Section Name (eg. ESN Freiburg): ' SECTIONNAME
-	read -p 'Section Domain (eg. freiburg.esn-germany.de): ' DOMAIN
-	read -p 'Mail Address: ' MAIL
-	echo -e "Creating a new website for section: ${SECTIONNAME} \nDomain Address:\t https://${DOMAIN} \nAdmin Mail:\t ${MAIL}"
-	read -p 'Are the information above correct? [y/N]' INFO
-
-	if [[ $INFO != "y" ]]; then
-		echo "Aborting creation"
-		exit 0
-	fi
-	echo ${SECTIONNAME} >> sections.txt
-	add_section_website
-
-}
-
 ############################################################
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":d:u:n" option; do
+while getopts "dun" option; do
 	case $option in
 	d) # display Help
 		delete_strapi_section
@@ -192,7 +190,7 @@ while getopts ":d:u:n" option; do
 		;;
 	esac
 done
-
+update_sections
 printf "Usage of the script ./create_section.sh -n/-u/-d:
 	-n to create a new section website 
 	-d delete an existing website 
