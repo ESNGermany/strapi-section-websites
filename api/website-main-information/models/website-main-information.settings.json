@@ -1,0 +1,109 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_main_informations",
+  "info": {
+    "name": "Website Main Information",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "sectionShortName": {
+      "type": "string",
+      "required": true
+    },
+    "facebookLink": {
+      "type": "string",
+      "required": true
+    },
+    "instagramLink": {
+      "type": "string",
+      "required": true
+    },
+    "pretixLink": {
+      "type": "string"
+    },
+    "addressNameFirstLine": {
+      "type": "string",
+      "required": false
+    },
+    "addressStreetSecondLine": {
+      "type": "string"
+    },
+    "addressCityThirdLine": {
+      "type": "string"
+    },
+    "addressEmailFourthLine": {
+      "type": "string"
+    },
+    "welcomeMessageFrontPage": {
+      "type": "string",
+      "required": true
+    },
+    "officialLogo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "headerImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "imageGridFrontPage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "titleColor": {
+      "type": "enumeration",
+      "enum": [
+        "esnGreen",
+        "esnLightBlue",
+        "esnDarkBlue",
+        "esnPink",
+        "esnOrange"
+      ],
+      "required": true
+    },
+    "buttonColor": {
+      "type": "enumeration",
+      "enum": [
+        "esnGreen",
+        "esnLightBlue",
+        "esnDarkBlue",
+        "esnPink",
+        "esnOrange"
+      ],
+      "required": true
+    },
+    "facebookName": {
+      "type": "string"
+    },
+    "instagramName": {
+      "type": "string"
+    },
+    "sectionLongName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
