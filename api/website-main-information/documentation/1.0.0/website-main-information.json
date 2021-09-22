@@ -593,6 +593,9 @@
           "sectionLongName": {
             "type": "string"
           },
+          "websiteMetaDescription": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -664,6 +667,9 @@
             "type": "string"
           },
           "sectionLongName": {
+            "type": "string"
+          },
+          "websiteMetaDescription": {
             "type": "string"
           },
           "published_at": {

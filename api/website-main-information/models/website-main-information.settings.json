@@ -104,6 +104,9 @@
     "sectionLongName": {
       "type": "string",
       "required": true
+    },
+    "websiteMetaDescription": {
+      "type": "string"
     }
   }
 }
