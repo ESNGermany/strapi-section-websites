@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/22/2021 4:29:43 PM"
+    "x-generation-date": "09/22/2021 6:08:38 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4894,9 +4894,6 @@
           "Order_on_page": {
             "type": "integer"
           },
-          "Youtube_video_embed_link": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4943,9 +4940,6 @@
           },
           "Order_on_page": {
             "type": "integer"
-          },
-          "Youtube_video_embed_link": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -5089,7 +5083,6 @@
           "officialLogo",
           "headerImage",
           "imageGridFrontPage",
-          "titleColor",
           "buttonColor",
           "sectionLongName"
         ],
@@ -5328,16 +5321,6 @@
               }
             }
           },
-          "titleColor": {
-            "type": "string",
-            "enum": [
-              "esnGreen",
-              "esnLightBlue",
-              "esnDarkBlue",
-              "esnPink",
-              "esnOrange"
-            ]
-          },
           "buttonColor": {
             "type": "string",
             "enum": [
@@ -5372,7 +5355,6 @@
           "facebookLink",
           "instagramLink",
           "welcomeMessageFrontPage",
-          "titleColor",
           "buttonColor",
           "sectionLongName"
         ],
@@ -5403,16 +5385,6 @@
           },
           "welcomeMessageFrontPage": {
             "type": "string"
-          },
-          "titleColor": {
-            "type": "string",
-            "enum": [
-              "esnGreen",
-              "esnLightBlue",
-              "esnDarkBlue",
-              "esnPink",
-              "esnOrange"
-            ]
           },
           "buttonColor": {
             "type": "string",

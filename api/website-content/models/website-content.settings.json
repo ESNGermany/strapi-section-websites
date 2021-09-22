@@ -25,7 +25,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "Layout": {
       "type": "enumeration",
@@ -57,9 +58,6 @@
       "type": "integer",
       "required": true,
       "min": 1
-    },
-    "Youtube_video_embed_link": {
-      "type": "string"
     }
   }
 }

@@ -639,9 +639,6 @@
           "Order_on_page": {
             "type": "integer"
           },
-          "Youtube_video_embed_link": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -688,9 +685,6 @@
           },
           "Order_on_page": {
             "type": "integer"
-          },
-          "Youtube_video_embed_link": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",

@@ -325,7 +325,6 @@
           "officialLogo",
           "headerImage",
           "imageGridFrontPage",
-          "titleColor",
           "buttonColor",
           "sectionLongName"
         ],
@@ -564,16 +563,6 @@
               }
             }
           },
-          "titleColor": {
-            "type": "string",
-            "enum": [
-              "esnGreen",
-              "esnLightBlue",
-              "esnDarkBlue",
-              "esnPink",
-              "esnOrange"
-            ]
-          },
           "buttonColor": {
             "type": "string",
             "enum": [
@@ -608,7 +597,6 @@
           "facebookLink",
           "instagramLink",
           "welcomeMessageFrontPage",
-          "titleColor",
           "buttonColor",
           "sectionLongName"
         ],
@@ -639,16 +627,6 @@
           },
           "welcomeMessageFrontPage": {
             "type": "string"
-          },
-          "titleColor": {
-            "type": "string",
-            "enum": [
-              "esnGreen",
-              "esnLightBlue",
-              "esnDarkBlue",
-              "esnPink",
-              "esnOrange"
-            ]
           },
           "buttonColor": {
             "type": "string",

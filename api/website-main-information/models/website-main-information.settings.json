@@ -73,17 +73,6 @@
       "required": true,
       "pluginOptions": {}
     },
-    "titleColor": {
-      "type": "enumeration",
-      "enum": [
-        "esnGreen",
-        "esnLightBlue",
-        "esnDarkBlue",
-        "esnPink",
-        "esnOrange"
-      ],
-      "required": true
-    },
     "buttonColor": {
       "type": "enumeration",
       "enum": [
