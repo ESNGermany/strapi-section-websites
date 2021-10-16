@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_events",
+  "info": {
+    "name": "Website Events",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "type": "richtext",
+      "required": true
+    },
+    "causes": {
+      "type": "enumeration",
+      "enum": [
+        "Education_Youth",
+        "Environmental_Sustainability",
+        "Health_Wellbeing",
+        "Skills_Employability",
+        "Social_Inclusion",
+        "Culture"
+      ],
+      "required": true
+    },
+    "start": {
+      "type": "datetime",
+      "required": true
+    },
+    "end": {
+      "type": "datetime",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
