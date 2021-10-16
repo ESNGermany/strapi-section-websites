@@ -43,16 +43,6 @@
       "type": "string",
       "required": true
     },
-    "officialLogo": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true,
-      "pluginOptions": {}
-    },
     "headerImage": {
       "model": "file",
       "via": "related",
