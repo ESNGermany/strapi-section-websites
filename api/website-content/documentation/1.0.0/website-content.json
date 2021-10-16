@@ -637,7 +637,8 @@
             ]
           },
           "Order_on_page": {
-            "type": "integer"
+            "type": "integer",
+            "default": 1
           },
           "published_at": {
             "type": "string",
@@ -684,7 +685,8 @@
             ]
           },
           "Order_on_page": {
-            "type": "integer"
+            "type": "integer",
+            "default": 1
           },
           "published_at": {
             "type": "string",
