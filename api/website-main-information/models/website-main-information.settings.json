@@ -17,27 +17,33 @@
     },
     "facebookLink": {
       "type": "string",
-      "required": true
+      "required": false,
+      "default": "https://www.facebook.com/"
     },
     "instagramLink": {
       "type": "string",
-      "required": true
+      "required": false,
+      "default": "https://www.instagram.com/"
     },
     "pretixLink": {
-      "type": "string"
+      "type": "string",
+      "default": "https://tickets.esn-germany.de/"
     },
     "addressNameFirstLine": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "addressStreetSecondLine": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "addressCityThirdLine": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "addressEmailFourthLine": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "welcomeMessageFrontPage": {
       "type": "string",
@@ -72,7 +78,8 @@
         "esnPink",
         "esnOrange"
       ],
-      "required": true
+      "required": true,
+      "default": "esnGreen"
     },
     "facebookName": {
       "type": "string"
@@ -85,7 +92,12 @@
       "required": true
     },
     "websiteMetaDescription": {
-      "type": "string"
+      "type": "text",
+      "required": true
+    },
+    "eventPageText": {
+      "type": "text",
+      "required": true
     }
   }
 }

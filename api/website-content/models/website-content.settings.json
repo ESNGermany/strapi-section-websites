@@ -57,7 +57,9 @@
     "Order_on_page": {
       "type": "integer",
       "required": true,
-      "min": 1
+      "min": 1,
+      "unique": true,
+      "default": 1
     }
   }
 }
