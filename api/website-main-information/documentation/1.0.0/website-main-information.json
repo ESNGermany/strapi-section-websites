@@ -319,13 +319,17 @@
         "required": [
           "id",
           "sectionShortName",
-          "facebookLink",
-          "instagramLink",
+          "addressNameFirstLine",
+          "addressStreetSecondLine",
+          "addressCityThirdLine",
+          "addressEmailFourthLine",
           "welcomeMessageFrontPage",
           "headerImage",
           "imageGridFrontPage",
           "buttonColor",
-          "sectionLongName"
+          "sectionLongName",
+          "websiteMetaDescription",
+          "eventPageText"
         ],
         "properties": {
           "id": {
@@ -335,13 +339,16 @@
             "type": "string"
           },
           "facebookLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://www.facebook.com/"
           },
           "instagramLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://tickets.esn-germany.de/"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -497,6 +504,7 @@
           },
           "buttonColor": {
             "type": "string",
+            "default": "esnGreen",
             "enum": [
               "esnGreen",
               "esnLightBlue",
@@ -517,6 +525,9 @@
           "websiteMetaDescription": {
             "type": "string"
           },
+          "eventPageText": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -526,24 +537,31 @@
       "NewWebsite-main-information": {
         "required": [
           "sectionShortName",
-          "facebookLink",
-          "instagramLink",
+          "addressNameFirstLine",
+          "addressStreetSecondLine",
+          "addressCityThirdLine",
+          "addressEmailFourthLine",
           "welcomeMessageFrontPage",
           "buttonColor",
-          "sectionLongName"
+          "sectionLongName",
+          "websiteMetaDescription",
+          "eventPageText"
         ],
         "properties": {
           "sectionShortName": {
             "type": "string"
           },
           "facebookLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://www.facebook.com/"
           },
           "instagramLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string"
+            "type": "string",
+            "default": "https://tickets.esn-germany.de/"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -562,6 +580,7 @@
           },
           "buttonColor": {
             "type": "string",
+            "default": "esnGreen",
             "enum": [
               "esnGreen",
               "esnLightBlue",
@@ -580,6 +599,9 @@
             "type": "string"
           },
           "websiteMetaDescription": {
+            "type": "string"
+          },
+          "eventPageText": {
             "type": "string"
           },
           "published_at": {
