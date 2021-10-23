@@ -2,15 +2,39 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/website-main-information",
+      "path": "/website-main-informations",
       "handler": "website-main-information.find",
       "config": {
         "policies": []
       }
     },
     {
+      "method": "GET",
+      "path": "/website-main-informations/count",
+      "handler": "website-main-information.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/website-main-informations/:id",
+      "handler": "website-main-information.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/website-main-informations",
+      "handler": "website-main-information.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
-      "path": "/website-main-information",
+      "path": "/website-main-informations/:id",
       "handler": "website-main-information.update",
       "config": {
         "policies": []
@@ -18,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/website-main-information",
+      "path": "/website-main-informations/:id",
       "handler": "website-main-information.delete",
       "config": {
         "policies": []

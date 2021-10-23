@@ -2,15 +2,39 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/website-imprint",
+      "path": "/website-imprints",
       "handler": "website-imprint.find",
       "config": {
         "policies": []
       }
     },
     {
+      "method": "GET",
+      "path": "/website-imprints/count",
+      "handler": "website-imprint.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/website-imprints/:id",
+      "handler": "website-imprint.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/website-imprints",
+      "handler": "website-imprint.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
-      "path": "/website-imprint",
+      "path": "/website-imprints/:id",
       "handler": "website-imprint.update",
       "config": {
         "policies": []
@@ -18,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/website-imprint",
+      "path": "/website-imprints/:id",
       "handler": "website-imprint.delete",
       "config": {
         "policies": []

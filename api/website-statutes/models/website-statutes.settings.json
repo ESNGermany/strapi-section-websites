@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "website_statutes",
   "info": {
     "name": "Website Statutes",

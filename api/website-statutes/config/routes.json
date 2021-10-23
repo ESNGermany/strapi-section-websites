@@ -9,8 +9,32 @@
       }
     },
     {
-      "method": "PUT",
+      "method": "GET",
+      "path": "/website-statutes/count",
+      "handler": "website-statutes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/website-statutes/:id",
+      "handler": "website-statutes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/website-statutes",
+      "handler": "website-statutes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/website-statutes/:id",
       "handler": "website-statutes.update",
       "config": {
         "policies": []
@@ -18,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/website-statutes",
+      "path": "/website-statutes/:id",
       "handler": "website-statutes.delete",
       "config": {
         "policies": []
