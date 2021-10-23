@@ -2,11 +2,11 @@
   "servers": [
     {
       "url": "https://strapi.esn-freiburg.de",
-      "description": "Development server"
+      "description": "Freiburg Development server"
     },
     {
-      "url": "YOUR_STAGING_SERVER",
-      "description": "Staging server server"
+      "url": "https://sections.esn-germany.de",
+      "description": "Sections Strapi Server"
     },
     {
       "url": "YOUR_PRODUCTION_SERVER",
