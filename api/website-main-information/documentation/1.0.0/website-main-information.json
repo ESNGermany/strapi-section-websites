@@ -541,7 +541,8 @@
           "buttonColor",
           "sectionLongName",
           "websiteMetaDescription",
-          "eventPageText"
+          "eventPageText",
+          "usePretixCalendar"
         ],
         "properties": {
           "id": {
@@ -739,6 +740,10 @@
           },
           "eventPageText": {
             "type": "string"
+          },
+          "usePretixCalendar": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -753,7 +758,8 @@
           "buttonColor",
           "sectionLongName",
           "websiteMetaDescription",
-          "eventPageText"
+          "eventPageText",
+          "usePretixCalendar"
         ],
         "properties": {
           "sectionShortName": {
@@ -811,6 +817,10 @@
           },
           "eventPageText": {
             "type": "string"
+          },
+          "usePretixCalendar": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

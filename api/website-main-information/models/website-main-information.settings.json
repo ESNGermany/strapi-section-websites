@@ -98,6 +98,11 @@
     "eventPageText": {
       "type": "text",
       "required": true
+    },
+    "usePretixCalendar": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
