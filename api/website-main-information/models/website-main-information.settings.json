@@ -26,8 +26,7 @@
       "default": "https://www.instagram.com/"
     },
     "pretixLink": {
-      "type": "string",
-      "default": "https://tickets.esn-germany.de/"
+      "type": "string"
     },
     "addressNameFirstLine": {
       "type": "string",
