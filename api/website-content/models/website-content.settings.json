@@ -58,7 +58,7 @@
       "type": "integer",
       "required": true,
       "min": 1,
-      "unique": true,
+      "unique": false,
       "default": 1
     }
   }

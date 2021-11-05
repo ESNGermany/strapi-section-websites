@@ -18,7 +18,8 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "Name": {
       "type": "string",
@@ -33,7 +34,7 @@
     },
     "Order": {
       "type": "integer",
-      "unique": true,
+      "unique": false,
       "required": true
     }
   }
