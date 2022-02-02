@@ -560,8 +560,7 @@
             "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string",
-            "default": "https://tickets.esn-germany.de/"
+            "type": "string"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -744,6 +743,10 @@
           "usePretixCalendar": {
             "type": "boolean",
             "default": false
+          },
+          "useImageSlideshow": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -774,8 +777,7 @@
             "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string",
-            "default": "https://tickets.esn-germany.de/"
+            "type": "string"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -821,6 +823,10 @@
           "usePretixCalendar": {
             "type": "boolean",
             "default": false
+          },
+          "useImageSlideshow": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"

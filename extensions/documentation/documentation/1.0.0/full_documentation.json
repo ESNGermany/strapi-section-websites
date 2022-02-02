@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/23/2021 4:13:31 PM"
+    "x-generation-date": "02/02/2022 5:23:56 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -24,11 +24,11 @@
   "servers": [
     {
       "url": "https://strapi.esn-freiburg.de",
-      "description": "Development server"
+      "description": "Freiburg Development server"
     },
     {
-      "url": "YOUR_STAGING_SERVER",
-      "description": "Staging server server"
+      "url": "https://sections.esn-germany.de",
+      "description": "Sections Strapi Server"
     },
     {
       "url": "YOUR_PRODUCTION_SERVER",
@@ -6347,7 +6347,8 @@
           "buttonColor",
           "sectionLongName",
           "websiteMetaDescription",
-          "eventPageText"
+          "eventPageText",
+          "usePretixCalendar"
         ],
         "properties": {
           "id": {
@@ -6365,8 +6366,7 @@
             "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string",
-            "default": "https://tickets.esn-germany.de/"
+            "type": "string"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -6545,6 +6545,14 @@
           },
           "eventPageText": {
             "type": "string"
+          },
+          "usePretixCalendar": {
+            "type": "boolean",
+            "default": false
+          },
+          "useImageSlideshow": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -6559,7 +6567,8 @@
           "buttonColor",
           "sectionLongName",
           "websiteMetaDescription",
-          "eventPageText"
+          "eventPageText",
+          "usePretixCalendar"
         ],
         "properties": {
           "sectionShortName": {
@@ -6574,8 +6583,7 @@
             "default": "https://www.instagram.com/"
           },
           "pretixLink": {
-            "type": "string",
-            "default": "https://tickets.esn-germany.de/"
+            "type": "string"
           },
           "addressNameFirstLine": {
             "type": "string"
@@ -6617,6 +6625,14 @@
           },
           "eventPageText": {
             "type": "string"
+          },
+          "usePretixCalendar": {
+            "type": "boolean",
+            "default": false
+          },
+          "useImageSlideshow": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"

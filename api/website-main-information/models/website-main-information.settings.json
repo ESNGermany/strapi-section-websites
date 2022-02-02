@@ -102,6 +102,10 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "useImageSlideshow": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
